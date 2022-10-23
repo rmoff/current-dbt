@@ -1,0 +1,8 @@
+current_dbt:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'current_dbt.duckdb'
+      threads: 1
