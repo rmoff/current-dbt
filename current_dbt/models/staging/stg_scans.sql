@@ -5,7 +5,7 @@ WITH      source_data AS (
           -- Spec #4: Rename fields to remove spaces etc
           SELECT    TRIM(name)             AS session_name,
                     Speakers               AS speakers,
-                    scans                  AS scans,
+                    TRY_CAST(scans AS INT) AS scans,
                     "# Survey Responses"   AS rating_ct,
                     -- Spec #9 Combine all track fields into a single summary
                     {% for t in tracks -%}
