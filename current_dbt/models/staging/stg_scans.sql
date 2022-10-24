@@ -3,7 +3,7 @@
 
 WITH      source_data AS (
           -- Spec #4: Rename fields to remove spaces etc
-          SELECT    NAME                   AS session_name,
+          SELECT    TRIM(name)             AS session_name,
                     Speakers               AS speakers,
                     scans                  AS scans,
                     "# Survey Responses"   AS rating_ct,
